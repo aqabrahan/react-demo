@@ -18,8 +18,13 @@ const customTheme = createMuiTheme({
     }
   }
 });
+const style = {
+  width: '90%',
+  margin: '0 auto',
+  padding: 50,
+}
 const App = () => (
-  <div>
+  <div style={style}>
     <Router>
       <MuiThemeProvider theme={customTheme}>
         <CssBaseline />
