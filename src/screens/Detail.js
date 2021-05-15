@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { Avatar, Card, CardContent, Grid, Typography } from '@material-ui/core'
+import { Avatar, Card, CardContent, Grid, Typography, LinearProgress } from '@material-ui/core'
 import { useParams } from 'react-router-dom';
 import { getTopUsers } from '../services/users';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
-  actions: {
-    '& > * ': {
-      marginRight: 10
-    }
+  card: {
+    display: 'flex',
+  },
+  info: {
+    marginLeft: 20,
   }
 }));
 
@@ -32,17 +33,19 @@ const Detail = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading..!!</div>
+    return <LinearProgress />
   }
 
   return (
     <Grid container item>
-      <Grid item xs="12">
+      <Grid item xs={12}>
         <Card>
-          <CardContent>
+          <CardContent className={classes.card}>
             <Avatar alt={user.name} src={user.avatar_url} />
-            <Typography variant="h6">{user.name}</Typography>
-            <Typography variant="subtitle1">{user.location}</Typography>
+            <div className={classes.info}>
+              <Typography variant="h6">{user.name}</Typography>
+              <Typography variant="subtitle1">{user.location}</Typography>
+            </div>
           </CardContent>
         </Card>
       </Grid>

@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <Grid container item>
-      <Grid item xs="12">
+      <Grid item xs={12}>
         <Card>
           <CardContent>
           <Typography variant="h3" gutterBottom>
