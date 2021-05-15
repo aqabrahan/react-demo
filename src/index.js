@@ -21,7 +21,7 @@ const customTheme = createMuiTheme({
 const style = {
   width: '90%',
   margin: '0 auto',
-  padding: 50,
+  padding: 30,
 }
 const App = () => (
   <div style={style}>

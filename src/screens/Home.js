@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(() => ({
   actions: {
     '& > * ': {
-      marginRight: 10
+      marginRight: 10,
+      marginBottom: 10
     }
   },
   link: {
